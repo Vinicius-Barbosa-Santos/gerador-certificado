@@ -44,15 +44,9 @@
           class="form-control custom-input"
           placeholder="Atividade exercida"
         />
-
-        @if (campoInvalido(atividadeRef)) {
-          <div class="error-message d-flex align-items-center">
-            <i class="ph ph-warning-circle"></i>
-            <p class="m-0">O nome da atividade é obrigatório</p>
-          </div>
-        }
       </div>
       <app-secondary-button
+        (click)="adicionarAtividade()"
         [disabled]="atividade.length == 0"
         textoBotao="Adicionar"
         phClass="ph ph-plus"
@@ -64,7 +58,7 @@
         @for (atividade of atividades; track $index) {
           <div class="item">
             <span class="item-text">{{ atividade }}</span>
-            <div class="remove-btn">
+            <div (click)="excluirAtividade($index)" class="remove-btn">
               <i class="ph-bold ph-x"></i>
             </div>
           </div>
