@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-item-certificado',
+  standalone: true,
   imports: [CommonModule, SecondaryButton],
   templateUrl: './item-certificado.html',
   styleUrl: './item-certificado.css',
